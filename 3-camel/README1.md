@@ -1,4 +1,4 @@
-##What is Apache Camel?
+##W hat is Apache Camel?
 
 So what is Apache Camel and what is it used for?
 
@@ -18,7 +18,7 @@ Some things worth noting about Camel:
 * It comes with a huge library of components – if you can think of a system you’d like to interact with, somebody has probably already written a component for it; everything from pushing files to an Amazon cloud, to sending a tweet.
 * It’s quite mature – Apache Camel has truly come of age and forms the foundation of some commercially-sold integration products, like Red Hat Fuse ESB and Talend ESB.
 
-##What is Camel used for?
+##W hat is Camel used for?
 Almost any time you need to move data from A to B, you can probably use Camel. Think of the following examples:
 
 * Picking up invoices from an FTP server and emailing them to you
@@ -28,7 +28,7 @@ Almost any time you need to move data from A to B, you can probably use Camel. T
 
 These are just a few examples. With the wide range of [components](http://camel.apache.org/components.html) available in Camel, the sky’s the limit.
 
-##Thinking in Camel
+## Thinking in Camel
 The basic concept in Camel is the route.
 
 [Routes](img/camel-pipe-diagram.png)
@@ -48,7 +48,7 @@ The beauty is that these components are reusable, and you can even contribute yo
 
 In between endpoints, the data can also be transformed or modified, either by passing the data through another endpoint, or by using a processor.
 
-##Working with messages in Camel
+## Working with messages in Camel
 
 Camel works with data using a message model.
 
@@ -64,13 +64,13 @@ The important thing to understand in Camel’s message model is that the Body ca
 
 You will learn more about Camel’s message model as you move through the tutorial.
 
-##Creating the Maven project and importing into Eclipse
+## Creating the Maven project and importing into Eclipse
 
 First you’ll create the Maven project that will hold your Apache Camel code. Maven is a build tool for Java based projects. It can be used to create new projects, automatically manage dependencies, build, compile and deploy code, and much more. Many projects adopt Maven as a standard.
 
 Maven is immensely useful when working with Camel because it can create a new Camel project from a template (known as an “archetype”), with some boilerplate code to get you up and running. Maven can also turn this code into a project that can be managed in Eclipse.
 
-##Creating the Camel maven project
+## Creating the Camel maven project
 
 The first step is to create the new project, from the Maven command line. Follow these steps to create your example Camel Maven project:
 
@@ -98,7 +98,7 @@ Type the following to convert the project into an Eclipse project: mvn eclipse:e
 
 Now you can import the project into your IDE of choice
 
-##Camel project structure
+## Camel project structure
 
 The main code resides in MyRouteBuilder.java. In Camel-speak, this is a RouteBuilder class, and this is where your plumbing configuration resides.
 
@@ -122,7 +122,7 @@ For convenience, the Maven archetype also includes another Java class, MainApp, 
 
 This is useful for testing, as you’ll see below.
 
-##Understanding the demo project
+## Understanding the demo project
 
 The demo project includes some code that builds a simple Camel route. This section describes what the demo route does.
 
@@ -159,7 +159,7 @@ When the route runs, these two files will be picked up by Camel, inspected to se
 
 Now let’s run the route and see what happens.
 
-##Running the demo route
+## Running the demo route
 
 To run the route:
 

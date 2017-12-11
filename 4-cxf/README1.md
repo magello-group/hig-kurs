@@ -1,5 +1,5 @@
 
-##Step1: Bringing Spring Boot & Apache CXF up and running
+## 1. Bringing Spring Boot & Apache CXF up and running
 
 Our first goal should be to get Spring Boot up together with Apache CXF. As a starting point, I love to use the Spring Initializr. Just choose “Web” and optionally “DevTools”. After importing the resulting project into our IDE, we have to add the correct dependency for Apache CXF. If you use Maven as I do, I added the dependencies cxf–rt–frontend–jaxws and cxf–rt-transports-http along with the current CXF version 3.1.4 to my pom.xml. After our build tool has imported both libraries and some dependencies, we can add two spring beans to our HigCxfApplication.java, which will initialize CXF completely:
 
@@ -28,7 +28,7 @@ The CXFServlet will process all SOAP requests that reach our URI /soap-api/* and
 No services have been found.
 …as there are no services deployed until now 🙂
 
-##Step2: From WSDL to Java…
+## 2. From WSDL to Java…
 To reach our “no XML” goal, we could use a XML databinding framework such as Java Architecture for XML Binding (JAXB). In combination with the “Java API for XML Web Services” (JAX-WS) we have a comfortable chance to provide SOAP web services with Java standard tools – the reference implementation (RI) is part of the Java runtime and can be used out-of-the-box.
 
 Again everything will be reproducable, as we extend our example from step 1. The running example sources can be found in the project step2_wsdl_2_java_maven.
@@ -61,7 +61,7 @@ The wsdl files are located under the folder wsdl
 
 The wsdl:portType finally defines what the (XML) requests and reponses of our web service methods will look like – and how they will act in error situations.
 
-###Nested XSD imports…
+### Nested XSD imports…
 
 Following the definition of the wsdl:messages element, the fragments of the XML schema are referenced. Here´s the biggest difference between our derived example and the original WeatherService:
 
@@ -69,7 +69,7 @@ Our WSDL imports the central Weather1.0.xsd, which again imports weather-general
 
 And there are more imports in those XSDs. The effort was necessary to emulate the considerably bigger and more complex web services that are used in the field out there. Not really reaching that size, our service helps us show many techniques that matter to get things working. I was really anxious if my choosen toolchain could handle that WSDL. It wasn´t really a problem. We´ll see it step by step.
 
-###WSDL-2-Java (finally!)
+### WSDL-2-Java (finally!)
 
 Because our WSDL describes our web service API contract-first, our dependent Java classes should always represent the current state of the WSDL. It should therefore regularly be generated from it. Furthermore, as our WSDL describes all aspects of our API, we don´t want to check in those generated Java classes into our version control system.
 
@@ -118,7 +118,7 @@ on commandline after you got the project from step2_wsdl_2_java_maven. This shou
 
 Finally don´t forget to prevent the generated Java classes from beeing checked in into your version control system, as we don´t want to have them there. If you use Git, you can simply put the /target-Folder into your .gitignore – if it´s not already there.
 
-##Step3: a running SOAP-Endpoint
+## 3. a running SOAP-Endpoint
 
 This next step will finally bring our first SOAP end point to life. So let´s extend our project from step2.
 

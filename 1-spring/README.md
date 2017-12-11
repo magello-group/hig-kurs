@@ -1,4 +1,4 @@
-#Spring 4 MVC REST Controller Service Example (JSON CRUD Tutorial) 
+# Spring 4 MVC REST Controller Service Example (JSON CRUD Tutorial) 
 
 A step by step tutorial to understand Spring 4 MVC REST API and to create RESTful service using Spring 4.
 
@@ -23,7 +23,7 @@ The demo REST application will have Customer resource. This customer resource ca
 | /customers/{id}	| PUT	        | Replace the details for given customer {id}
 | /customers/{id}	| DELETE      |	Delete the customer for given customer {id}
 
-##1. Create a new Maven Project
+## 1. Create a new Maven Project
 
 If you are using Eclipse then you can use M2Eclipse plugin. Check the tutorial Spring 4 MVC Hello World and follow the section 1.
 
@@ -41,13 +41,13 @@ This will generate maven application with default project directory structure. Y
 mvn eclipse:eclipse
 And then simply import the project in Eclipse.
 
-##2. Add Spring 4 MVC Maven dependencies (Update pom.xml)
+## 2. Add Spring 4 MVC Maven dependencies (Update pom.xml)
 
 Project structure is created. Now let’s start and add first the maven dependencies for Spring 4 MVC REST in our pom.xml file.
 
 Update pom.xml file and add following dependencies.
 
-#####pom.xml
+##### pom.xml
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -101,13 +101,13 @@ Update pom.xml file and add following dependencies.
  
 After updating pom.xml, Eclipse’s maven plugin should start resolving the dependencies.
 
-##3. Set Annotation based Configuration for Spring 4 MVC REST
+## 3. Set Annotation based Configuration for Spring 4 MVC REST
 
 For this Spring 4 MVC REST tutorial we are going to use Spring’s Java based configuration or annotation based configuration instead of old XML configuration. So now let us add the Java Configuration required to bootstrap Spring 4 MVC REST in our webapp.
 
 Create AppConfig.java file under /src folder. Give appropriate package name to your file. We are using @EnableWebMvc, @ComponentScan and @Configuration annotations. These will bootstrap the spring mvc application and set package to scan controllers and resources.
 
-#####/src/main/java/net/viralpatel/spring/config/AppConfig.java
+##### /src/main/java/net/viralpatel/spring/config/AppConfig.java
 ```java
 package se.hig.spring.config;
 
@@ -123,11 +123,11 @@ public class AppConfig {
 }
 ```
 
-##4. Set Servlet 3 Java Configuration
+## 4. Set Servlet 3 Java Configuration
 
 Create AppInitializer class under config package. This class will replace web.xml and it will map the spring’s dispatcher servlet and bootstrap it.
 
-#####/src/main/java/net/viralpatel/spring/config/AppInitializer.java
+##### /src/main/java/net/viralpatel/spring/config/AppInitializer.java
 ```java
 package se.hig.spring.config;
 
@@ -155,11 +155,11 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 We have configured the dispatcher servlet using standard Java based configuration instead of the older web.xml. Thus web.xml is no longer required and we can simply delete it.
 
-##5. Create the Customer Model
+## 5. Create the Customer Model
 
 Next let us create Customer model class that will have few properties such as firstName, lastName, email etc. This bean will hold customer information.
 
-#####/src/main/java/net/viralpatel/spring/model/Customer.java
+##### /src/main/java/net/viralpatel/spring/model/Customer.java
 ```java
 package se.hig.spring.model;
 
@@ -191,13 +191,13 @@ public class Customer {
 }
 ```
 
-##6. Create the Dummy Customer Data Access Object (DAO)
+## 6. Create the Dummy Customer Data Access Object (DAO)
 
 Instead of storing the customer data in database and to make this example simple, we will create a dummy data access object that will store customer details in a list. This DAO class can be easily replaced with Spring Data DAO or custom DAO. But for this example we will keep it easy.
 
 The CustomerDAO contains methods list(), get(), create(), update() and delete() to perform CRUD operation on customers.
 
-#####/src/main/java/net/viralpatel/spring/dao/CustomerDAO.java
+##### /src/main/java/net/viralpatel/spring/dao/CustomerDAO.java
 ```java
 package se.hig.spring.dao;
 
@@ -306,11 +306,11 @@ public class CustomerDAO {
 }
 ```
 
-##7. Create the Customer REST Controller
+## 7. Create the Customer REST Controller
 
 Now let us create CustomerRestController class. This class is annotated with @RestController annotation. Also note that we are using new annotations @GetMapping, @PostMapping, @PutMapping and @DeleteMapping instead of standard @RequestMapping. These annotations are available since Spring MVC 4.3 and are standard way of defining REST endpoints. They act as wrapper to @RequestMapping. For example @GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
 
-#####/src/main/java/net/viralpatel/spring/controller/CustomerRestController.java
+##### /src/main/java/net/viralpatel/spring/controller/CustomerRestController.java
 ```java
 package se.hig.spring.controller;
 
@@ -387,7 +387,7 @@ public class CustomerRestController {
 }
 ```
 
-##8. Download Tomcat and start application
+## 8. Download Tomcat and start application
 
 Get the latest version of Tomcat 8 here - (https://tomcat.apache.org/download-80.cgi)
 
