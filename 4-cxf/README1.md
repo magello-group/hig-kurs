@@ -118,7 +118,7 @@ on commandline after you got the project from step2_wsdl_2_java_maven. This shou
 
 Finally don´t forget to prevent the generated Java classes from beeing checked in into your version control system, as we don´t want to have them there. If you use Git, you can simply put the /target-Folder into your .gitignore – if it´s not already there.
 
-## 3. a running SOAP-Endpoint
+## 3. Running the SOAP-Endpoint
 
 This next step will finally bring our first SOAP end point to life. So let´s extend our project from step2.
 

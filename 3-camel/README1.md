@@ -1,4 +1,4 @@
-##W hat is Apache Camel?
+## What is Apache Camel?
 
 So what is Apache Camel and what is it used for?
 
@@ -18,7 +18,7 @@ Some things worth noting about Camel:
 * It comes with a huge library of components – if you can think of a system you’d like to interact with, somebody has probably already written a component for it; everything from pushing files to an Amazon cloud, to sending a tweet.
 * It’s quite mature – Apache Camel has truly come of age and forms the foundation of some commercially-sold integration products, like Red Hat Fuse ESB and Talend ESB.
 
-##W hat is Camel used for?
+## What is Camel used for?
 Almost any time you need to move data from A to B, you can probably use Camel. Think of the following examples:
 
 * Picking up invoices from an FTP server and emailing them to you
@@ -31,7 +31,7 @@ These are just a few examples. With the wide range of [components](http://camel.
 ## Thinking in Camel
 The basic concept in Camel is the route.
 
-[Routes](img/camel-pipe-diagram.png)
+![Routes](img/camel-pipe-diagram.png)
 
 Visualising a Camel route
 Thinking in terms of our plumbing analogy, a route is like a pipe that moves data from one place to another. These places are called endpoints.
