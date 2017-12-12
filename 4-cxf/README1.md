@@ -106,7 +106,32 @@ Starting from the <configuration>-tag it´s getting interesting:
 
 The <wsdlUrl> defines where our WSDL resides as resource and the <sourceDestDir> decides where to put the generated Java classes. Because we´ve chosen a realistic example, this configuration wouldn’t work for our WSDL with this bunch of imported and nested XSDs. So we have to add a <vmArg>: -Djavax.xml.accessExternalSchema=all makes sure that no XML schema is forgotten.
 
-After the necessary definition of the Maven goal wsimport, we use a second plugin: the build-helper-maven-plugin to add the generated Java classes to our classpath. Now we can use them like any other class in our project. If you want to give it a try, just run
+Run jaxws:wsimport to generate the java classes
+
+After the necessary definition of the Maven goal wsimport, we use a second plugin: the build-helper-maven-plugin to add the generated Java classes to our classpath. 
+
+```xml
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <executions>
+        <execution>
+         <id>add-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>add-source</goal>
+            </goals>
+            <configuration>
+                <sources>
+                    <source>target/generated-sources/wsdlimport/Weather1.0</source>
+                </sources>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+```
+
+Now we can use them like any other class in our project. If you want to give it a try, just run
 
 ```
 mvn clean generate-sources
