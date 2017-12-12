@@ -30,10 +30,7 @@ If you are using Eclipse then you can use M2Eclipse plugin. Check the tutorial S
 Alternatively if you want to generate Maven webapp using mvn command then follow these steps.
 
 ```sh
-mvn archetype:create 
-  -DgroupId=se.hig.spring
-  -DartifactId=SpringRest
-  -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=se.hig.spring -DartifactId=SpringRest -DarchetypeArtifactId=maven-archetype-webapp
 ```
 
 This will generate maven application with default project directory structure. You can then run following command and convert the project in Eclipse project.
