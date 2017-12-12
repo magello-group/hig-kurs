@@ -24,3 +24,11 @@
 * Stop the application
 * Create another route
   * that will consume messages from the queue you used in the other route and send the message contents to the log / standard output.
+
+## Extra, Goldstar Awards!
+* Alter the initial file listener route to use a REST service instead.
+* Make the routing so that we have a content based router that checks for the keywords 'Americas' and 'Asia' and redirects the messages containing these words to corresponding queues. If there is some other country it should be sent to a default queue.
+* Cooperate with your neighbours.
+ * Create a route where you publish messages to different Topics instead.
+ * Have your neighbourgs listen to your topics and consume messages from it.
+ * ***Variant:** use only one topic and have the consumers inspect the content of the messages instead and do the apropriate routing.* 
