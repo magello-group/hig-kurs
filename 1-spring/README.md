@@ -104,7 +104,7 @@ For this Spring 4 MVC REST tutorial we are going to use Spring’s Java based co
 
 Create AppConfig.java file under /src folder. Give appropriate package name to your file. We are using @EnableWebMvc, @ComponentScan and @Configuration annotations. These will bootstrap the spring mvc application and set package to scan controllers and resources.
 
-##### /src/main/java/net/viralpatel/spring/config/AppConfig.java
+##### /src/main/java/se/hig/spring/config/AppConfig.java
 ```java
 package se.hig.spring.config;
 
@@ -124,7 +124,7 @@ public class AppConfig {
 
 Create AppInitializer class under config package. This class will replace web.xml and it will map the spring’s dispatcher servlet and bootstrap it.
 
-##### /src/main/java/net/viralpatel/spring/config/AppInitializer.java
+##### /src/main/java/se/hig/spring/config/AppInitializer.java
 ```java
 package se.hig.spring.config;
 
@@ -156,7 +156,7 @@ We have configured the dispatcher servlet using standard Java based configuratio
 
 Next let us create Customer model class that will have few properties such as firstName, lastName, email etc. This bean will hold customer information.
 
-##### /src/main/java/net/viralpatel/spring/model/Customer.java
+##### /src/main/java/se/hig/spring/model/Customer.java
 ```java
 package se.hig.spring.model;
 
@@ -194,7 +194,7 @@ Instead of storing the customer data in database and to make this example simple
 
 The CustomerDAO contains methods list(), get(), create(), update() and delete() to perform CRUD operation on customers.
 
-##### /src/main/java/net/viralpatel/spring/dao/CustomerDAO.java
+##### /src/main/java/se/hig/spring/dao/CustomerDAO.java
 ```java
 package se.hig.spring.dao;
 
@@ -307,7 +307,7 @@ public class CustomerDAO {
 
 Now let us create CustomerRestController class. This class is annotated with @RestController annotation. Also note that we are using new annotations @GetMapping, @PostMapping, @PutMapping and @DeleteMapping instead of standard @RequestMapping. These annotations are available since Spring MVC 4.3 and are standard way of defining REST endpoints. They act as wrapper to @RequestMapping. For example @GetMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
 
-##### /src/main/java/net/viralpatel/spring/controller/CustomerRestController.java
+##### /src/main/java/se/hig/spring/controller/CustomerRestController.java
 ```java
 package se.hig.spring.controller;
 
