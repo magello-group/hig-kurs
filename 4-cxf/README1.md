@@ -31,8 +31,6 @@ No services have been found.
 ## 2. From WSDL to Java…
 To reach our “no XML” goal, we could use a XML databinding framework such as Java Architecture for XML Binding (JAXB). In combination with the “Java API for XML Web Services” (JAX-WS) we have a comfortable chance to provide SOAP web services with Java standard tools – the reference implementation (RI) is part of the Java runtime and can be used out-of-the-box.
 
-Again everything will be reproducable, as we extend our example from step 1. The running example sources can be found in the project step2_wsdl_2_java_maven.
-
 The structure of the mentioned web service example http://wsf.cdyne.com/WeatherWS/Weather.asmx?WSDL is not comparable with our Enterprise WSDLs out there. As I said, I extended this example until it was more comparable with the bigger WSDLs, especially thinking about “the how” – not really the actual size.
 
 If you can hardly remember what this WSDL thingy was… Just remember one thing: read it from bottom to the top. 🙂
@@ -114,7 +112,7 @@ After the necessary definition of the Maven goal wsimport, we use a second plugi
 mvn clean generate-sources
 ```
 
-on commandline after you got the project from step2_wsdl_2_java_maven. This should generate all necessary classes into the folder target/generated-sources/wsdlimport/Weather1.0. If you inspect the result, you should recognize the similarity between the package-structure and how the sample-XSDs are structured.
+on commandline after you got the project running. This should generate all necessary classes into the folder target/generated-sources/wsdlimport/Weather1.0. If you inspect the result, you should recognize the similarity between the package-structure and how the sample-XSDs are structured.
 
 Finally don´t forget to prevent the generated Java classes from beeing checked in into your version control system, as we don´t want to have them there. If you use Git, you can simply put the /target-Folder into your .gitignore – if it´s not already there.
 
